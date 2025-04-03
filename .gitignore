@@ -1,1 +1,27 @@
-**/mlops
+# Python-generated files
+__pycache__/
+**/.DS_Store
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+uv.lock
+
+# Environments
+.env
+
+# Other ignored files/folders
+**/notebooks
+**/test.ipynb
+# **/data
+
+# MLflow directories
+**/mlruns
+**/mlflow.db
+**/save_data
+**/images
+**/models
