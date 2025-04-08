@@ -1,0 +1,39 @@
+schema: '2.0'
+stages:
+  prepare:
+    cmd: python mlops/src/preprocessing.py
+    deps:
+    - path: mlops/data/BankNoteAuthentication.csv
+      hash: md5
+      md5: e648bb4177bb3738000a7585557c6088
+      size: 46442
+    - path: mlops/src/preprocessing.py
+      hash: md5
+      md5: cbd75d06736708b517903b078534c197
+      size: 1550
+    - path: params.yaml
+      hash: md5
+      md5: b1e9bd89f7a2fbe370de6b47c3ff21b3
+      size: 112
+    params:
+      params.yaml:
+        data.target: class
+        split.random_state: 42
+        split.test_size: 0.33
+    outs:
+    - path: mlops/data/X_test.npy
+      hash: md5
+      md5: 69425146f481a6923f606a91746e50cf
+      size: 14624
+    - path: mlops/data/X_train.npy
+      hash: md5
+      md5: 40f28507d13f3d51c44a8ebbcef847f2
+      size: 29536
+    - path: mlops/data/y_test.npy
+      hash: md5
+      md5: 72826c78a36f6a90ec82735deb213b0d
+      size: 3752
+    - path: mlops/data/y_train.npy
+      hash: md5
+      md5: 1cbfff683e3194b5c09383d2c68ab16b
+      size: 7480

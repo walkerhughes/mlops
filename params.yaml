@@ -1,0 +1,7 @@
+data:
+  path: mlops/data/BankNoteAuthentication.csv
+  target: class
+
+split:
+  test_size: 0.33
+  random_state: 42

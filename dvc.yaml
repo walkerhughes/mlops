@@ -1,0 +1,16 @@
+stages:
+  prepare:
+    cmd: python mlops/src/preprocessing.py
+    deps:
+      - mlops/src/preprocessing.py
+      - mlops/data/BankNoteAuthentication.csv
+      - params.yaml
+    outs:
+      - mlops/data/X_train.npy
+      - mlops/data/X_test.npy
+      - mlops/data/y_train.npy
+      - mlops/data/y_test.npy
+    params:
+      - split.test_size
+      - split.random_state
+      - data.target
