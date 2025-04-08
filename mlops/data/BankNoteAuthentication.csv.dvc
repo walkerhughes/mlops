@@ -1,0 +1,5 @@
+outs:
+- md5: e648bb4177bb3738000a7585557c6088
+  size: 46442
+  hash: md5
+  path: BankNoteAuthentication.csv
