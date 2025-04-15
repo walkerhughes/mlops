@@ -25,3 +25,6 @@ uv.lock
 **/save_data
 **/images
 **/models
+
+# Containers
+**/docker_tutorial
