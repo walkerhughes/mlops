@@ -172,10 +172,15 @@ class ModelScoringFlow(FlowSpec):
         if target_name not in self.df.columns:
             raise ValueError(f"Target column '{target_name}' not found in the data")
         
+        # Get split ratio as a Python float, not a Parameter object
+        split_ratio = self.split_ratio
+        if not isinstance(split_ratio, float):
+            split_ratio = float(str(split_ratio))
+        
         # Split the data into train and scoring sets
         train_data, scoring_data = train_test_split(
             self.df, 
-            test_size=1.0-float(self.split_ratio),
+            test_size=1.0-split_ratio,
             random_state=self.random_seed
         )
         
@@ -327,17 +332,18 @@ class ModelScoringFlow(FlowSpec):
                     for i in range(self.y_pred_proba.shape[1]):
                         self.predictions_df[f'probability_class_{i}'] = self.y_pred_proba[:, i]
             
-            # If we have ground truth, evaluate and save results
-            if self.has_target:
-                self.next(self.evaluate_predictions)
-            else:
-                self.next(self.save_predictions)
-                
         except Exception as e:
             print(f"Error during prediction: {e}")
             import traceback
             traceback.print_exc()
             raise RuntimeError(f"Failed to generate predictions: {e}")
+        
+        # Move the conditional transition outside the try block
+        # to satisfy Metaflow's static analysis
+        if hasattr(self, 'has_target') and self.has_target:
+            self.next(self.evaluate_predictions)
+        else:
+            self.next(self.save_predictions)
     
     @step
     def evaluate_predictions(self) -> None:
