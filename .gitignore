@@ -11,8 +11,9 @@ wheels/
 .venv
 uv.lock
 
-# Environments
+# Environments & credentials
 .env
+sa-private-key.json
 
 # Other ignored files/folders
 **/notebooks
@@ -25,6 +26,9 @@ uv.lock
 **/save_data
 **/images
 **/models
+
+# Metaflow directories
+.metaflow
 
 # Containers
 **/docker_tutorial

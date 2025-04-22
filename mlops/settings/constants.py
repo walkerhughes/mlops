@@ -1,9 +1,15 @@
 import os
 
-RANDOM_SEED = 51
+# Paths
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_PATH = os.path.join(ROOT_DIR, "data")
+MODELS_PATH = os.path.join(ROOT_DIR, "models")
+PREDICTIONS_PATH = os.path.join(ROOT_DIR, "predictions")
 
-# get the current working directory
-PARENT_DIR = os.path.abspath(os.path.join(os.getcwd(), os.pardir))
+# MLflow settings
+MLFLOW_TRACKING_URI = "sqlite:///mlflow.db"
+MLFLOW_EXPERIMENT_NAME = "currency_classifier"
 
-# path to data relative to the parent directory
-DATA_PATH = os.path.join(PARENT_DIR, "data")
+# Model settings
+DEFAULT_MODEL_NAME = "currency_classifier"
+DEFAULT_MODEL_STAGE = "Production"
