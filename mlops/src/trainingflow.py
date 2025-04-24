@@ -19,9 +19,11 @@ from mlops.src.utils import (
     measure_inference_time
 )
 from mlops.settings.constants import DATA_PATH
+from mlops.settings.constants import MLFLOW_SERVER_URI
+from mlops.settings.constants import MLFLOW_LOCAL_URI
 
 # Constants
-DEFAULT_TRACKING_URI = 'sqlite:///mlflow.db'
+DEFAULT_TRACKING_URI = MLFLOW_SERVER_URI # 'sqlite:///mlflow.db'
 DEFAULT_EXPERIMENT_NAME = 'currency_classifier'
 DEFAULT_RANDOM_SEED = 51
 DEFAULT_SAVE_DIR = 'save_data'
