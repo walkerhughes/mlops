@@ -8,6 +8,8 @@ from sklearn.metrics import accuracy_score
 from sklearn.linear_model import LogisticRegression
 
 from mlops.settings.constants import DATA_PATH
+from mlops.settings.constants import MLFLOW_SERVER_URI
+
 
 
 def load_data(data_path: str, file_name: str) -> pd.DataFrame:
