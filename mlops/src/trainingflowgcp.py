@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from metaflow import FlowSpec, step, Parameter, pypi_base
+from metaflow import FlowSpec, step, Parameter, pypi_base, retry, timeout, catch, resources, kubernetes
 
 # Constants
 MLFLOW_SERVER_URI = "https://mlflow-api-662968008319.us-west2.run.app"
@@ -64,6 +64,10 @@ class ClassifierTrainFlow(FlowSpec):
         type=float
     )
 
+    @resources(cpu=1, memory=2000)
+    @timeout(seconds=120)
+    @retry(times=2)
+    @catch(var='start_failure')
     @step
     def start(self) -> None:
         import mlflow
@@ -89,6 +93,10 @@ class ClassifierTrainFlow(FlowSpec):
         print(f"Data loaded successfully")
         self.next(self.split_data)
 
+    @resources(cpu=1, memory=2000)
+    @timeout(seconds=120)
+    @retry(times=2)
+    @catch(var='split_data_failure')
     @step
     def split_data(self) -> None:
         from sklearn.model_selection import train_test_split
@@ -107,6 +115,10 @@ class ClassifierTrainFlow(FlowSpec):
         self.lambdas = np.arange(0.001, 1, 0.3)
         self.next(self.train_lasso, foreach='lambdas')
 
+    @kubernetes(cpu=1, memory=2000)
+    @timeout(seconds=300)
+    @retry(times=2)
+    @catch(var='train_lasso_failure')
     @step
     def train_lasso(self):
         import mlflow
@@ -127,6 +139,10 @@ class ClassifierTrainFlow(FlowSpec):
             mlflow.log_metric("test_accuracy", test_acc)
         self.next(self.choose_model)
 
+    @resources(cpu=1, memory=2000)
+    @timeout(seconds=120)
+    @retry(times=2)
+    @catch(var='choose_model_failure')
     @step
     def choose_model(self, inputs):
 
