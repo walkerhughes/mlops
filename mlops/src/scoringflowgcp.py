@@ -6,7 +6,7 @@ import mlflow
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 
-MLFLOW_SERVER_URI = "https://mlflow-api-662968008319.us-west2.run.app"
+MLFLOW_SERVER_URI = ""
 
 @pypi_base(packages={'numpy':'1.23.5', 'scikit-learn':'1.2.2', 'mlflow':'2.21.3'}, python='3.9.16')
 class ClassifierScoringFlow(FlowSpec):

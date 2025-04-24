@@ -3,7 +3,7 @@ import pandas as pd
 from metaflow import FlowSpec, step, Parameter, pypi_base, retry, timeout, catch, resources, kubernetes
 
 # Constants
-MLFLOW_SERVER_URI = "https://mlflow-api-662968008319.us-west2.run.app"
+MLFLOW_SERVER_URI = ""
 DEFAULT_TRACKING_URI = MLFLOW_SERVER_URI # 'sqlite:///mlflow.db'
 DEFAULT_EXPERIMENT_NAME = 'currency_classifier'
 DEFAULT_RANDOM_SEED = 51
