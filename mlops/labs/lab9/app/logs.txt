@@ -1,0 +1,36 @@
+2025-05-02T19:26:43.207410630Z INFO:     Started server process [1]
+2025-05-02T19:26:43.207433546Z INFO:     Waiting for application startup.
+2025-05-02T19:26:42.962555255Z INFO:     Started server process [1]
+2025-05-02T19:26:42.962578338Z INFO:     Waiting for application startup.
+2025-05-02T19:26:43.844799630Z /usr/local/lib/python3.11/site-packages/sklearn/base.py:380: InconsistentVersionWarning: Trying to unpickle estimator TfidfTransformer from version 1.5.1 when using version 1.6.1. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+2025-05-02T19:26:43.844827755Z https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+2025-05-02T19:26:43.844830922Z   warnings.warn(
+2025-05-02T19:26:43.871114422Z /usr/local/lib/python3.11/site-packages/sklearn/base.py:380: InconsistentVersionWarning: Trying to unpickle estimator TfidfVectorizer from version 1.5.1 when using version 1.6.1. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+2025-05-02T19:26:43.871150422Z https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+2025-05-02T19:26:43.871153838Z   warnings.warn(
+2025-05-02T19:26:43.914401047Z /usr/local/lib/python3.11/site-packages/sklearn/base.py:380: InconsistentVersionWarning: Trying to unpickle estimator LogisticRegression from version 1.5.1 when using version 1.6.1. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+2025-05-02T19:26:43.914442755Z https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+2025-05-02T19:26:43.914447922Z   warnings.warn(
+2025-05-02T19:26:43.914449588Z /usr/local/lib/python3.11/site-packages/sklearn/base.py:380: InconsistentVersionWarning: Trying to unpickle estimator Pipeline from version 1.5.1 when using version 1.6.1. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+2025-05-02T19:26:43.914451755Z https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+2025-05-02T19:26:43.914453130Z   warnings.warn(
+2025-05-02T19:26:43.914698630Z INFO:     Application startup complete.
+2025-05-02T19:26:43.914990838Z INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-05-02T19:26:43.944223505Z /usr/local/lib/python3.11/site-packages/sklearn/base.py:380: InconsistentVersionWarning: Trying to unpickle estimator TfidfTransformer from version 1.5.1 when using version 1.6.1. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+2025-05-02T19:26:43.944249505Z https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+2025-05-02T19:26:43.944252547Z   warnings.warn(
+2025-05-02T19:26:43.970664047Z /usr/local/lib/python3.11/site-packages/sklearn/base.py:380: InconsistentVersionWarning: Trying to unpickle estimator TfidfVectorizer from version 1.5.1 when using version 1.6.1. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+2025-05-02T19:26:43.970698172Z https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+2025-05-02T19:26:43.970702255Z   warnings.warn(
+2025-05-02T19:26:44.003143922Z /usr/local/lib/python3.11/site-packages/sklearn/base.py:380: InconsistentVersionWarning: Trying to unpickle estimator LogisticRegression from version 1.5.1 when using version 1.6.1. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+2025-05-02T19:26:44.003175047Z https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+2025-05-02T19:26:44.003178172Z   warnings.warn(
+2025-05-02T19:26:44.003179797Z /usr/local/lib/python3.11/site-packages/sklearn/base.py:380: InconsistentVersionWarning: Trying to unpickle estimator Pipeline from version 1.5.1 when using version 1.6.1. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+2025-05-02T19:26:44.003181922Z https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+2025-05-02T19:26:44.003183297Z   warnings.warn(
+2025-05-02T19:26:44.003468255Z INFO:     Application startup complete.
+2025-05-02T19:26:44.003686922Z INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+2025-05-02T19:29:33.752048625Z INFO:     Shutting down
+2025-05-02T19:29:33.853791417Z INFO:     Waiting for application shutdown.
+2025-05-02T19:29:33.855993625Z INFO:     Application shutdown complete.
+2025-05-02T19:29:33.858736375Z INFO:     Finished server process [1]

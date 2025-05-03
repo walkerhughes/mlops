@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reddit-app-deployment
+  labels:
+    app: reddit-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reddit-app
+  template:
+    metadata:
+      labels:
+        app: reddit-app
+    spec:
+      containers:
+      - name: reddit-app
+        # ↴  replace PROJECT_ID if you used a different one or different tag
+        image: us-west2-docker.pkg.dev/mlops-mlflow-456920/reddit-docker/reddit-app:v2
+        imagePullPolicy: IfNotPresent     # Always in prod; IfNotPresent fine for dev
+        ports:
+        - containerPort: 8000
+        resources:                        # Autopilot REQUIRES requests
+          requests:
+            cpu: "100m"                   # 0.10 vCPU
+            memory: "128Mi"
+          limits:
+            cpu: "200m"
+            memory: "256Mi"
+
